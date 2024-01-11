@@ -22,11 +22,11 @@ hex.textContent = winColor;
 }
 }
 function buttonClick(button) {
-    if(button.id == "win"){
-        win();
-    }else{
-        button.remove();
-    }
+if(button.id == "win"){
+win();
+}else{
+button.remove();
+}
 }
 function RndNum(number) {
 return Math.floor(Math.random() * (number))+1;
@@ -40,12 +40,12 @@ color += letters[Math.floor(Math.random() * 16)];
 return color;
 }
 function win(){
-    congrats.textContent = "Congratulations!";
-    hex.style.color = winColor;
-    congrats.style.color = winColor;
-    var buttons = document.querySelectorAll(".button:not(#win)");
-    buttons.forEach(function(button) {
-    button.remove();
+congrats.textContent = "Congratulations!";
+hex.style.color = winColor;
+congrats.style.color = winColor;
+var buttons = document.querySelectorAll(".button:not(#win)");
+buttons.forEach(function(button) {
+button.remove();
 });
 var newGame = document.createElement("button");
 newGame.className = "newGame";
@@ -58,25 +58,25 @@ var winButton = document.createElement("win");
 winButton.disabled = true;
 }
 function Diff(button){
-    if(button.id == "diff1"){
-        numberOfButtons = 5;
-    }
-    if(button.id == "diff2"){
-        numberOfButtons = 7;
-    }
-    if(button.id == "diff3"){
-        numberOfButtons = 11;
-    }
-    Reset();
+if(button.id == "diff1"){
+numberOfButtons = 5;
+}
+if(button.id == "diff2"){
+numberOfButtons = 7;
+}
+if(button.id == "diff3"){
+numberOfButtons = 11;
+}
+Reset();
 }
 function Reset(){
-    var buttons = document.querySelectorAll(".button");
-    buttons.forEach(function(button) {
-    button.remove();});
-    hex.style.color = "#4b4b4b";
-    congrats.remove();
-    generateButtons(numberOfButtons);
-    var newGameButton = document.getElementById("newGame");
-    newGameButton.remove();
+var buttons = document.querySelectorAll(".button");
+buttons.forEach(function(button) {
+button.remove();});
+hex.style.color = "#4b4b4b";
+congrats.remove();
+generateButtons(numberOfButtons);
+var newGameButton = document.getElementById("newGame");
+newGameButton.remove();
 }
 generateButtons(numberOfButtons);
